@@ -3,16 +3,16 @@
 
 该工程基于IK（反向运动学）实现少量跟踪器数据驱动虚拟角色运动。其中，将Bvh格式文件中提取的部分关节位姿数据作为跟踪器模拟数据，跟踪器模拟数据读取过程由SendBvh文件夹中的程序实现。Unity工程在IKUnity文件夹，驱动虚拟角色运动过程在Unity中完成。
 
-##运行环境
+## 运行环境
 * Unity2019.4
   安装Final IK 1.9插件
 * Python 3.6.4
   安装opencv，vtk
 
-##使用说明
+## 使用说明
 该工程支持离线读取txt数据和实时发送数据两种方式。数据发送端与接收端分别按以下流程操作
 
-###数据发送
+### 数据发送
 数据发送相关程序在SendBvh文件夹中，运行testBVH_new.py即可。
 
 若需离线读取txt数据，运行函数
@@ -27,7 +27,7 @@ SaveUnity("Take Dance 1 Multi.bvh","SendUnity6Tracker.txt")
 #输入参数分别为IP地址与端口号
 UDPsend("127.0.0.1",4321)
 ```
-###数据接收
+### 数据接收
 运行Unity场景，场景中需新建空物体(head~rf)用于接收跟踪器数据。若接收实时发送的数据，还需新建空物体UDPEmpty和DataCache，DataCache上挂载脚本RecDataCache.cs，UDPEmpty上挂载Loom.cs和UdpServer.cs并指定Datacache变量。
 
 ![text](Screenshots/img1.png)
