@@ -29,6 +29,7 @@ UDPsend("127.0.0.1",4321)
 ```
 ###数据接收
 运行Unity场景，场景中需新建空物体(head~rf)用于接收跟踪器数据。若接收实时发送的数据，还需新建空物体UDPEmpty和DataCache，DataCache上挂载脚本RecDataCache.cs，UDPEmpty上挂载Loom.cs和UdpServer.cs并指定Datacache变量。
+
 ![text](Screenshots/img1.png)
 
 虚拟角色放置在场景中，虚拟角色必须为Humanoid人形动画模式，骨架参考系(Reference)归零，膝盖(Leg)赋一定的弯曲角度作为IK解算的参考。
